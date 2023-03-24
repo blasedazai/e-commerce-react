@@ -1,0 +1,126 @@
+﻿@import "../../Base/Global.scss";
+@import "../../Base/Colour.scss";
+
+/* Common xs1, xs2 */
+@media all and (max-width: #{($mq-sm1 - 1) + "px"}) {
+    .section-01 {
+    }
+}
+
+/* Common sm1, sm2 tablet */
+@media all and (min-width: #{($mq-sm1) + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+    .section-01 {
+    }
+}
+
+@media all and (min-width: #{$mq-md + "px"}) {
+    .section-02 {
+        padding: 100px;
+        .c-wrapper {
+            display: flex;
+            .categories-container {
+                border: 2px solid black;
+                width: 300px;
+                margin-right: 24px;
+                padding: 16px;
+                border-radius: 16px;
+                .categories-search {
+                    margin-bottom: 10px;
+                }
+                .categories-list {
+                    color: #FE4365;
+                }
+            }
+            .list-container {
+                flex: 1;
+                border: 2px solid black;
+                min-height: 700px;
+                border-radius: 16px;
+                .a-item-01 {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 16px;
+                    margin-top: 20px;
+                    .sort-container {
+                        width: 410px;
+                        display: flex;
+                        justify-content: space-between;
+                        .sort-item {
+                            width: 200px;
+                        }
+                        .sort-cleare {
+                            height: 50px;
+                            button {
+                                height: 100%;
+                            }
+                        }
+                    }
+                    > .search-container {
+                        .delete-icon {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .a-item-02 {
+                    .chips {
+                        .chip-delete {
+                        }
+                    }
+                }
+                .a-item-03 {
+                    padding: 20px;
+                    .products {
+                        .products-container {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 64px 32px;
+                            .card-01 {
+                                display: block;
+                                .c-item {
+                                    text-decoration: none;
+                                    .c-item-01 {
+                                        width: 100%;
+                                        height: 200px;
+                                        object-fit: cover;
+                                        margin-bottom: 16px;
+                                        box-shadow: -15px 15px 0px rgba(255, 255, 255, 0.5);
+                                        border-radius: 30px;
+                                    }
+                                    .c-item-02 {
+                                        padding: 5px;
+                                        font-weight: 700;
+                                        font-size: 32px;
+                                        line-height: 64px;
+                                        text-align: center;
+                                        color: #FE4365;
+                                    }
+                                    .c-item-03 {
+                                        font-weight: 600;
+                                        font-size: 24px;
+                                        line-height: 32px;
+                                        text-align: center;
+                                        color: #000000;
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 2;
+                                        -webkit-box-orient: vertical;
+                                        overflow: hidden;
+                                    }
+                                    .c-item-04 {
+                                        display: flex;
+                                        padding: 16px;
+                                        .c-item-04-A {
+                                            margin-right: 10px;
+                                            font-weight: 700;
+                                            font-size: 20px;
+                                            color: #FE4365;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

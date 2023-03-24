@@ -1,0 +1,67 @@
+@import "../../Base/Global.scss";
+@import "../../Base/Colour.scss";
+
+/* Common xs1, xs2 mobil*/
+@media all and (max-width: #{($mq-sm1 - 1) + "px"}) {
+    .header-01 {
+        .c-wrapper {
+        }
+    }
+}
+
+/* Common sm1, sm2 tablet */
+@media all and (min-width: #{($mq-sm1) + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
+    .header-01 {
+
+        .c-wrapper {
+        }
+    }
+
+}
+
+/* Common  md, lg, xl, xxl desktop*/
+@media all and (min-width: #{$mq-md + "px"}) {
+    .header-01 {
+        height: 76px;
+        background-color: black;
+        .c-wrapper {
+            height: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .a-item {
+                display: flex;
+                align-items: center;
+                .a-item-01 {
+                    margin-right: 10px;
+                    .a-item-01-A {
+                        display: flex;
+                        align-items: center;
+                        .icon {
+                            width: 30px;
+                            height: 30px;
+                            color: #FE4365;
+                        }
+                    }
+                    .a-item-01-B {
+                        padding: 5px;
+                        font-weight: 700;
+                        font-size: 18px;
+                        color: #FE4365;
+                    }
+                }
+            }
+            .b-item-01 {
+                width: 36px;
+                height: 36px;
+            }
+            .b-item-02 {
+                .b-item-02-A {
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+        }
+    }
+}

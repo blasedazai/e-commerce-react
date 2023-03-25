@@ -1,7 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
 import { AiOutlineGlobal } from "react-icons/ai";
+import { Badge } from "@mui/material";
+import { ShoppingCartCheckout} from "@mui/icons-material";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import { color } from "@mui/system";
 
 const Layout = () => {
+  const basket = useSelector((state:RootState) => state.basket.items)
   return (
     <div>
       <header className="header-01">
@@ -21,7 +27,8 @@ const Layout = () => {
           </nav>
           <img className="b-item-01" src={"/images/e-commerce.png"} />
 
-          <a className="b-item-02" href="https://github.com/efsanbbasi">
+          <div className="b-item-02">
+          <a className="b-item-02-A" href="https://github.com/efsanbbasi">
             <svg
               className="b-item-02-A"
               xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +40,12 @@ const Layout = () => {
               ></path>
             </svg>
           </a>
+            <Link to="/basket">
+              <Badge className="basket-item"  badgeContent={basket.length} color="error">
+                <ShoppingCartCheckout className="bakset-icon"/>
+              </Badge>
+            </Link>
+          </div>
         </div>
       </header>
       <main>

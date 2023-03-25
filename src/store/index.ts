@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import filterReducer from './features/filter/filterSlice'
 import productsReducer from './features/products/productsSlice'
+import basketReducer from './features/basket/basketSlice'
 import {setupListeners} from '@reduxjs/toolkit/dist/query'
 import { TypedUseSelectorHook, useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -9,6 +10,7 @@ export const store = configureStore({
     reducer: {
        filter: filterReducer,
        products: productsReducer,
+       basket: basketReducer,
     },
 });
 

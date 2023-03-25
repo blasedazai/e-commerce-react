@@ -12,11 +12,9 @@
 /* Common sm1, sm2 tablet */
 @media all and (min-width: #{($mq-sm1) + "px"}) and (max-width: #{($mq-md - 1) + "px"}) {
     .header-01 {
-
         .c-wrapper {
         }
     }
-
 }
 
 /* Common  md, lg, xl, xxl desktop*/
@@ -41,14 +39,14 @@
                         .icon {
                             width: 30px;
                             height: 30px;
-                            color: #FE4365;
+                            color: #fe4365;
                         }
                     }
                     .a-item-01-B {
                         padding: 5px;
                         font-weight: 700;
                         font-size: 18px;
-                        color: #FE4365;
+                        color: #fe4365;
                     }
                 }
             }
@@ -56,10 +54,25 @@
                 width: 36px;
                 height: 36px;
             }
+
             .b-item-02 {
+                display: flex;
+                align-items: center;
                 .b-item-02-A {
-                    width: 36px;
-                    height: 36px;
+                    margin-right: 10px;
+                    svg {
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+                a {
+                    .basket-item {
+                        .bakset-icon {
+                            color: #fe4365;
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
                 }
             }
         }

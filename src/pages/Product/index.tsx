@@ -4,13 +4,16 @@ import { useParams } from "react-router-dom";
 import { RootState } from "../../store";
 import { useEffect, useState } from "react";
 import { getProductDetails } from "../../services/products";
-import { Rating } from "@mui/material";
+import { Button, Rating } from "@mui/material";
+import { AddShoppingCart } from "@mui/icons-material";
+import { setBasketItems } from "../../store/features/basket/basketSlice";
 
 
 const ProductDefails = () => {
-    const dispatch = useDispatch()
-    const details = useSelector((state: RootState) => state.products.details)
-    const params = useParams()
+    const dispatch = useDispatch();
+    const details = useSelector((state: RootState) => state.products.details);
+    const params = useParams();
+    const basket = useSelector((state:RootState) => state.basket)
     const [imgSrc,setImgSrc] = useState("");
 
     useEffect(()=> {
@@ -53,7 +56,35 @@ const ProductDefails = () => {
                                     <span>Stock: {details.stock}</span>
                                 </div>
                                 <div className="desc-item-04">Rating: <Rating name="read-only"value={details.rating} readOnly precision={0.1} /></div> 
+                                
                             </div>
+                            <div className="dt-item-03">
+                                <Button onClick={() => {
+                                    const isInItems = basket.items.some(x => x.id === details.id)
+                                    let items = [];
+
+                                    if (isInItems) {
+                                        const index = basket.items.findIndex(x => x.id === details.id)
+                                        const count= basket.items[index].count;
+
+                                        items = [...basket.items];
+                                        items[index] = {...details, count: count +1}
+                                    }
+                                    else{
+                                        items= [
+                                            {
+                                                ...details,
+                                                count:1
+                                            },
+                                            ...basket.items
+                                        ]
+                                    }
+                                    dispatch(setBasketItems(items))
+                                    localStorage.setItem("basket", JSON.stringify(items))
+                                }} className="btn-basket" color="error">Sepete Ekle
+                                <AddShoppingCart className="icon-basket" /></Button>
+                                </div>
+                            
                         </div>
                     }
                 </div>

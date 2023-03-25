@@ -1,3 +1,4 @@
+
 import { Pagination, Rating } from "@mui/material";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -52,15 +53,16 @@ const List = () => {
           filteredList.length === 0 && 
           <div>Ürün bulunamadı</div>
         }
-        {
-          filteredList.length > 0 &&
           <div className="card-02">
-            <Pagination className="card-item" count={Math.round(filteredCount / filter.size)} color="secondary"
-            onChange={(e,value) => {
-              dispatch(setCurrentPage(value -1))
+        {
+        filteredList.length > 0 &&
+          <Pagination className="card-item" count={Math.ceil(filteredCount / filter.size)} color="secondary"
+          onChange={(e, value) => {
+            dispatch(setCurrentPage(value - 1))
             }} />
+          }
           </div>
-        }
+
       </div>
   );
 };

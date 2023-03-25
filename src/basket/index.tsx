@@ -78,14 +78,14 @@ const BasketDetails = () => {
                     }
                 </div>
                
-               <div className="emty-card">
                 {
                         basket.items.length ===0 &&
+                        <div className="emty-card">
                             <div className="empty-01">Your cart is empty.
                                 <Link className="empty-01-A" to="/products">Let's take a look again!</Link>
                             </div>
+                        </div>
                 }
-                </div>
             </div>
         </section>
     )

@@ -18,6 +18,7 @@ const filterSlice = createSlice({
       state.sort = action.payload;
     },
     setSearch(state, action: PayloadAction<string>) {
+      state.currentPage = 0;
       state.search = action.payload;
     },
     setCurrentPage(state, action: PayloadAction<number>) {

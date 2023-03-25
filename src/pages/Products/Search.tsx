@@ -1,5 +1,5 @@
 import { InputAdornment, TextField } from "@mui/material";
-import { Delete, Search as SearchIcon } from '@mui/icons-material';
+import { Delete, Search as SearchIcon, StarRateTwoTone } from '@mui/icons-material';
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { RootState } from "../../store";
@@ -7,7 +7,7 @@ import { setSearch } from "../../store/features/filter/filterSlice";
 
 const Search = () => {
     const dispatch= useDispatch();
-    const search = useSelector((stat: RootState) => stat.filter.search);
+    const search = useSelector((state: RootState) => state.filter.search);
 
 
     return(

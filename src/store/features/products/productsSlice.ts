@@ -58,13 +58,11 @@ const productsSlice = createSlice({
             else if (filter.sort === "descDiscount") {
                 _list = _list.sort((a, b) => b.discountPercentage - a.discountPercentage);
             }
-
-            //filter.currentPage
-            //filter.size
-            // _list.slice(0,9)
-            // _list.slice(9,18)
-            // _list.slice(18,27)
-    
+            
+            state.filteredCount = _list.length;
+            const c = filter.currentPage
+            const s = filter.size
+            _list = _list.slice(c * s, (s * (c + 1)));
             state.filteredList = _list;
 
         },
